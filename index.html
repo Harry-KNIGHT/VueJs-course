@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Harry's website</title>
+    <meta
+      name="description"
+      content="Harry is following online course for VueJs"
+    />
+    <meta charset="utf-8" />
+    <script src="vue.js"></script>
+    <!-- for google -->
+    <meta name="robots" content="index,follow" />
+    <!-- icon-->
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+    <!-- For get the device width and zoom (smartphone, Ipad etc...)-->
+  </head>
+
+  <header>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <button v-on:click="reverseTitle">Reverse</button>
+      <p :title="title">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. At fugit
+        nostrum quo rerum ut nisi pariatur modi dignissimos nesciunt architecto
+        libero, nulla laboriosam consectetur ab suscipit tempore! Fugiat, vero
+        doloremque.
+      </p>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: { title: "Super intro" },
+        methods: {
+          reverseTitle: function () {
+            this.title = this.title.split("").reverse().join("");
+          },
+        },
+      });
+    </script>
+  </header>
+
+  <body>
+    <h3>I love you</h3>
+  </body>
+</html>

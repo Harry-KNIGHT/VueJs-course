@@ -18,20 +18,26 @@
 
   <header>
     <div id="app">
-      <h1>{{ title }}</h1>
+      <h1>{{ title + '!' }}</h1>
+      <h2>{{ title == 'Super titre' ? 'Bon sens' : 'Mauvais sens'}}</h2>
+      <h1 v-once>{{ title }}</h1>
+      <!-- v-once is there for make the title motionless -->
       <button v-on:click="reverseTitle">Reverse</button>
       <p :title="title">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. At fugit
         nostrum quo rerum ut nisi pariatur modi dignissimos nesciunt architecto
         libero, nulla laboriosam consectetur ab suscipit tempore! Fugiat, vero
-        doloremque.
+        doloremque.<span v-html="strongTag"> </span>
       </p>
     </div>
 
     <script>
       new Vue({
         el: "#app",
-        data: { title: "Super intro" },
+        data: {
+          title: "Super titre",
+          strongTag: "<strong> IMPORTANT !</strong>",
+        },
         methods: {
           reverseTitle: function () {
             this.title = this.title.split("").reverse().join("");

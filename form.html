@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Harry's website</title>
+    <meta
+      name="description"
+      content="Harry is following online course for VueJs"
+    />
+    <meta charset="utf-8" />
+    <script src="vue.js"></script>
+    <!-- for google -->
+    <meta name="robots" content="index,follow" />
+    <meta name="viewport" content="width-device-width, initial-scale=1" />
+    <!-- For get the device width and zoom (smartphone, Ipad etc...)-->
+  </head>
+
+  <header>
+    <div id="app">
+      <h1>{{ title }}</h1>
+      <input type="text" v-model="title" />
+      <button>Reverse</button>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          title: " ",
+        },
+      });
+    </script>
+  </header>
+
+  <body></body>
+</html>
